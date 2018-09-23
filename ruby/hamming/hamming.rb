@@ -1,16 +1,13 @@
 
 class Hamming
-    def self.compute(normal, mutated)
-    #check strings are same length
-        unless normal.length == mutated.length
-            raise ArgumentError
-    end
+    def self.compute(dna1, dna2)
+    #check strings are same length otherwise return error
+        raise ArgumentError, 'DNA not the same length.' unless dna1.length == dna2.length
 
-    #
-    gene_diff = 0
-    mutated_character = mutated.split("")
-    normal.each_char.with_index(0) do |char, index|
-        unless mutated_character[index] == char.to_s
-            gene_diff = gene_diff + 1
+    #compare string differences
+
+        (0...dna1.length).count do |i|
+            dna1[i] != dna1[i]
+        end
     end
 end
